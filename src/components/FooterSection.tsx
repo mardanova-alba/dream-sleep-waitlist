@@ -15,7 +15,7 @@ const FooterSection = ({
           <p className="text-xl text-brand-text/70 mb-8 max-w-2xl mx-auto">
             Join thousands of forward-thinking investors who are already on the waitlist
           </p>
-          <Button onClick={onJoinWaitlist} className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-sky-400 hover:bg-sky-300">
+          <Button onClick={onJoinWaitlist} className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-blue-400 hover:bg-blue-300">
             Join the Waitlist
           </Button>
         </div>
