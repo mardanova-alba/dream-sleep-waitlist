@@ -1,22 +1,15 @@
-
 const ProblemSection = () => {
-  const problems = [
-    {
-      stat: "30M+",
-      description: "new traders since 2020 — yet 80% quit within 2 years"
-    },
-    {
-      stat: "25%",
-      description: "of volume is retail, but lags S&P 500 by 6%+ annually"
-    },
-    {
-      stat: "3 Missing",
-      description: "Time, tools, and discipline are the missing pieces"
-    }
-  ];
-
-  return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-brand-light">
+  const problems = [{
+    stat: "30M+",
+    description: "new traders since 2020 — yet 80% quit within 2 years"
+  }, {
+    stat: "25%",
+    description: "of volume is retail, but lags S&P 500 by 6%+ annually"
+  }, {
+    stat: "3 Missing",
+    description: "Time, tools, and discipline are the missing pieces"
+  }];
+  return <section className="py-24 px-6 bg-gradient-to-b from-white to-brand-light bg-brand-accent">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">
@@ -28,11 +21,7 @@ const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl p-8 card-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1"
-            >
+          {problems.map((problem, index) => <div key={index} className="bg-white rounded-2xl p-8 card-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1">
               <div className="text-center">
                 <div className="text-4xl font-bold gradient-text mb-4">
                   {problem.stat}
@@ -41,12 +30,9 @@ const ProblemSection = () => {
                   {problem.description}
                 </p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProblemSection;
