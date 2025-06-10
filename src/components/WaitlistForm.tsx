@@ -63,7 +63,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               placeholder="Your Name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
+              className="w-full px-4 py-3 rounded-xl bg-brand-primary text-brand-text border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 placeholder:text-brand-text/60"
               required
             />
           </div>
@@ -74,7 +74,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               placeholder="Your Email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
+              className="w-full px-4 py-3 rounded-xl bg-brand-primary text-brand-text border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 placeholder:text-brand-text/60"
               required
             />
           </div>
