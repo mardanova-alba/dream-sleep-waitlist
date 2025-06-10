@@ -59,7 +59,7 @@ const HowItWorksSection = () => {
           <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-accent/30 via-brand-primary/50 to-brand-accent/30"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
-            {steps.map((step, index) => <div key={index} className="group relative flex flex-col items-center text-center rounded-2xl mx-0 bg-sky-800">
+            {steps.map((step, index) => <div key={index} className="group relative flex flex-col items-center text-center rounded-2xl mx-0 bg-sky-900">
                 {/* Step Circle */}
                 <div className="relative mb-8">
                   <div className="w-32 h-32 bg-gradient-to-br from-white to-brand-light rounded-full flex items-center justify-center shadow-[0_8px_32px_rgba(191,233,255,0.3)] group-hover:shadow-[0_12px_40px_rgba(191,233,255,0.4)] transition-all duration-500 border border-brand-accent/20">
@@ -84,10 +84,10 @@ const HowItWorksSection = () => {
 
                 {/* Step Content */}
                 <div className="space-y-4 max-w-xs">
-                  <h3 className="text-lg text-brand-text leading-tight text-center font-extrabold md:text-xl py-[17px] my-0 mx-[13px]">
+                  <h3 className="text-lg leading-tight text-center font-extrabold md:text-xl py-[17px] my-0 mx-[13px] text-slate-900">
                     {step.title}
                   </h3>
-                  <p className="leading-relaxed text-slate-900 px-0 py-[4px] text-center my-[10px] text-sm mx-[13px]">
+                  <p className="leading-relaxed px-0 py-[4px] text-center my-[10px] text-sm mx-[13px] text-slate-900">
                     {step.description}
                   </p>
                 </div>
