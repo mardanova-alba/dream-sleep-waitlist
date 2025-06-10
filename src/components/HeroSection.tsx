@@ -5,7 +5,7 @@ interface HeroSectionProps {
 const HeroSection = ({
   onJoinWaitlist
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-br from-sky-50 to-sky-900">
+  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-br from-sky-50 to-sky-900 /n">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
