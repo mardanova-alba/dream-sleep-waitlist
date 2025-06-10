@@ -46,13 +46,7 @@ const HeroSection = ({
         {/* Hero Art */}
         <div className="mt-16 animate-fade-in">
           <div className="relative max-w-3xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-brand-primary to-brand-accent shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex items-center justify-center rounded-2xl">
-              <div className="text-center text-brand-text/60">
-                <div className="text-6xl mb-4">🌙</div>
-                
-                
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

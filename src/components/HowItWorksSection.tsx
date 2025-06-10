@@ -93,7 +93,7 @@ const HowItWorksSection = () => {
                 </div>
 
                 {/* Arrow connector (hidden on mobile) */}
-                {index < steps.length - 1 && <div className="hidden lg:block absolute top-16 -right-2 text-brand-accent/50 text-xl transform -translate-y-1/2 bg-cyan-950">
+                {index < steps.length - 1 && <div className="hidden lg:block absolute top-16 -right-2 text-brand-accent/50 text-xl transform -translate-y-1/2 bg-transparent">
                     →
                   </div>}
               </div>)}
