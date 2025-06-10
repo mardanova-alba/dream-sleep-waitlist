@@ -1,13 +1,11 @@
-
 import { Button } from "@/components/ui/button";
-
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
 }
-
-const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
+const HeroSection = ({
+  onJoinWaitlist
+}: HeroSectionProps) => {
+  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
@@ -20,9 +18,7 @@ const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
       <div className="relative max-w-5xl mx-auto text-center z-10">
         {/* Logo */}
         <div className="mb-8 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-accent rounded-2xl mb-6 shadow-[0_2px_8px_rgba(0,0,0,0.05)]">
-            <span className="text-2xl font-bold text-brand-text">💰</span>
-          </div>
+          
         </div>
 
         {/* Main headline */}
@@ -42,10 +38,7 @@ const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
 
         {/* CTA Button */}
         <div className="animate-fade-in">
-          <Button 
-            onClick={onJoinWaitlist}
-            className="pill-button bg-brand-accent text-brand-text hover:bg-brand-accent/90 text-lg px-12 py-4 h-auto"
-          >
+          <Button onClick={onJoinWaitlist} className="pill-button bg-brand-accent text-brand-text hover:bg-brand-accent/90 text-lg px-12 py-4 h-auto">
             Join Waitlist
           </Button>
         </div>
@@ -53,18 +46,16 @@ const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
         {/* Hero Art */}
         <div className="mt-16 animate-fade-in">
           <div className="relative max-w-3xl mx-auto">
-            <div className="aspect-video bg-gradient-to-br from-brand-primary to-brand-accent rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex items-center justify-center">
+            <div className="aspect-video bg-gradient-to-br from-brand-primary to-brand-accent shadow-[0_8px_32px_rgba(0,0,0,0.08)] flex items-center justify-center rounded-2xl">
               <div className="text-center text-brand-text/60">
                 <div className="text-6xl mb-4">🌙</div>
-                <div className="text-lg font-medium">Hero Art Placeholder</div>
-                <div className="text-sm mt-2">Crescent moon + candlesticks visualization</div>
+                
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
