@@ -21,7 +21,7 @@ const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => <div key={index} className="bg-gray-100 border border-gray-100 rounded-2xl p-8 shadow-md hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1\n">
+          {problems.map((problem, index) => <div key={index} className="bg-gray-100 border border-gray-50 rounded-2xl p-8 shadow-md hover:shadow-[0_8px_24px_rgba(0,0,0,0.20)] transition-all duration-300 hover:-translate-y-1\\n">
               <div className="text-center">
                 <div className="text-4xl font-bold gradient-text mb-4">
                   {problem.stat}
