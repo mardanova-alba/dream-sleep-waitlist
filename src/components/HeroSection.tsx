@@ -5,12 +5,12 @@ interface HeroSectionProps {
 const HeroSection = ({
   onJoinWaitlist
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-b from-sky-50 to-sky-400\n">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 bg-sky-100">
+      <div className="absolute inset-0 opacity-10 bg-sky-300 ">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-brand-accent rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-brand-primary rounded-full blur-3xl"></div>
       </div>
