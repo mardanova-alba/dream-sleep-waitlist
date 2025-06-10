@@ -21,7 +21,7 @@ const SolutionSection = () => {
     title: "$DREAM Token Yield",
     description: "Earn additional rewards through our native token ecosystem"
   }];
-  return <section className="py-24 px-6 bg-white">
+  return <section className="py-24 px-6 bg-white ">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">
@@ -33,7 +33,7 @@ const SolutionSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => <div key={index} className="group bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 bg-slate-700">
+          {solutions.map((solution, index) => <div key={index} className="group bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2 bg-accent-foreground">
               <div className="text-brand-text mb-6 group-hover:scale-110 transition-transform duration-300">
                 {solution.icon}
               </div>
