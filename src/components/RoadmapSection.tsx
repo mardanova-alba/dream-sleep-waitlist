@@ -20,7 +20,7 @@ const RoadmapSection = () => {
     description: "Options trading, LATAM/APAC markets, and B2B solutions",
     status: "future"
   }];
-  return <section className="py-24 px-6 bg-white">
+  return <section className="py-24 px-6 bg-brand-light">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">

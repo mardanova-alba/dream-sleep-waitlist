@@ -21,7 +21,7 @@ const SolutionSection = () => {
     title: "$DREAM Token Yield",
     description: "Earn additional rewards through our native token ecosystem"
   }];
-  return <section className="py-24 px-6 bg-neutral-50">
+  return <section className="py-24 px-6 bg-brand-light">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">
