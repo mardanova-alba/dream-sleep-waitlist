@@ -33,7 +33,7 @@ const SolutionSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => <div key={index} className="group bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.20)] transition-all duration-300 hover:-translate-y-2 bg-sky-800">
+          {solutions.map((solution, index) => <div key={index} className="group bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-2 bg-sky-800">
               <div className="text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300 bg-slate-50">
                 {solution.icon}
               </div>
