@@ -1,5 +1,10 @@
 
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+
 const Thanks = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-light via-white to-brand-primary px-6">
       <div className="text-center max-w-2xl mx-auto">
@@ -17,6 +22,15 @@ const Thanks = () => {
           You're now on the MoneyDream.AI waitlist. We'll notify you as soon as we launch 
           and you'll be among the first to experience autonomous trading that works while you sleep.
         </p>
+
+        <div className="animate-fade-in">
+          <Button 
+            onClick={() => navigate("/")}
+            className="pill-button bg-brand-accent text-brand-text hover:bg-brand-accent/90 text-lg px-8 py-3 h-auto"
+          >
+            Back to Home
+          </Button>
+        </div>
       </div>
     </div>
   );
