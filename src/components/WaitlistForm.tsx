@@ -57,21 +57,21 @@ const WaitlistForm = ({
             <Input type="text" placeholder="Your Name" value={formData.name} onChange={e => setFormData({
             ...formData,
             name: e.target.value
-          })} required className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 bg-sky-100" />
+          })} required className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 bg-sky-800" />
           </div>
           
           <div>
             <Input type="email" placeholder="Your Email" value={formData.email} onChange={e => setFormData({
             ...formData,
             email: e.target.value
-          })} className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20" required />
+          })} required className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 bg-sky-800" />
           </div>
 
           <div className="flex gap-3 pt-4">
-            <Button type="button" onClick={onClose} variant="outline" className="flex-1 pill-button border-brand-accent/30 text-brand-text hover:bg-brand-light">
+            <Button type="button" onClick={onClose} variant="outline" className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300">
               Cancel
             </Button>
-            <Button type="submit" disabled={!isFormValid || isSubmitting} className="flex-1 pill-button bg-brand-accent text-brand-text hover:bg-brand-accent/90 disabled:opacity-50 disabled:cursor-not-allowed">
+            <Button type="submit" disabled={!isFormValid || isSubmitting} className="flex-1 pill-button disabled:opacity-50 disabled:cursor-not-allowed bg-sky-400 hover:bg-sky-300 text-base font-extralight text-brand-text text-center">
               {isSubmitting ? "Joining..." : "Join Waitlist"}
             </Button>
           </div>
