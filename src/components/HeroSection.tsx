@@ -5,12 +5,12 @@ interface HeroSectionProps {
 const HeroSection = ({
   onJoinWaitlist
 }: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-b from-sky-50 to-sky-900\n">
+  return <section className=".custom-gradient {\n  background-image:\n    radial-gradient(ellipse at bottom left, rgba(30, 58, 138, 0.6) 20%, transparent 70%),\n    radial-gradient(ellipse at bottom right, rgba(30, 58, 138, 0.6) 20%, transparent 70%),\n    linear-gradient(to bottom, #E0F2FE, #1E3A8A);\n}">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 bg-sky-200">
+      <div className="absolute inset-0 opacity-10 bg-primary-DEFAULT">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-brand-accent rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-brand-primary rounded-full blur-3xl"></div>
       </div>

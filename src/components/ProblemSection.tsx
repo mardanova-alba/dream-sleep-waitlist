@@ -9,7 +9,7 @@ const ProblemSection = () => {
     stat: "3 Missing",
     description: "Time, tools, and discipline are the missing pieces"
   }];
-  return <section className="py-24 px-6 bg-gradient-to-bl from-brand-dark to-brand-light bg-brand-accent\n">
+  return <section className="py-24 px-6 bg-gradient-to-b from-sky-900 to-transition-blue bg-primary-DEFAULT">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">
