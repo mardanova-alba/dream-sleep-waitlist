@@ -10,7 +10,7 @@ const HeroSection = ({
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-10 bg-sky-100">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-brand-accent rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-brand-primary rounded-full blur-3xl"></div>
       </div>
@@ -36,7 +36,7 @@ const HeroSection = ({
 
         {/* CTA Button */}
         <div className="animate-fade-in">
-          <Button onClick={onJoinWaitlist} className="pill-button bg-brand-accent text-brand-text hover:bg-brand-accent/90 text-lg px-12 py-4 h-auto">
+          <Button onClick={onJoinWaitlist} className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-blue-300 hover:bg-blue-200">
             Join Waitlist
           </Button>
         </div>

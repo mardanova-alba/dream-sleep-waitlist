@@ -9,7 +9,7 @@ const ProblemSection = () => {
     stat: "3 Missing",
     description: "Time, tools, and discipline are the missing pieces"
   }];
-  return <section className="py-24 px-6 bg-gradient-to-b from-white to-brand-light bg-brand-accent">
+  return <section className="py-24 px-6 bg-gradient-to-bl from-brand-dark to-brand-light bg-brand-accent\n">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-text mb-6">
@@ -21,7 +21,7 @@ const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => <div key={index} className="bg-white rounded-2xl p-8 card-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1">
+          {problems.map((problem, index) => <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1\n\n">
               <div className="text-center">
                 <div className="text-4xl font-bold gradient-text mb-4">
                   {problem.stat}
