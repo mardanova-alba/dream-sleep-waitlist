@@ -48,7 +48,7 @@ const SolutionSection = () => {
               key={index}
               className="group bg-gradient-to-br from-brand-light to-white rounded-2xl p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="text-brand-accent mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-brand-text mb-6 group-hover:scale-110 transition-transform duration-300">
                 {solution.icon}
               </div>
               <h3 className="text-xl font-semibold text-brand-text mb-4">
