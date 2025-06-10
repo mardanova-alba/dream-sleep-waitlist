@@ -43,7 +43,7 @@ const RoadmapSection = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1 bg-gradient-to-br from-sky-50 to-sky-200 rounded-2xl p-8 card-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] transition-all duration-300 bg-accent-DEFAULT">
+                <div className="flex-1 bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-8 card-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] transition-all duration-300 bg-accent-DEFAULT">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                     <h3 className="text-xl md:text-2xl font-semibold text-brand-text">
                       {milestone.title}
