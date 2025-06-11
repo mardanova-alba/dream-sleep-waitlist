@@ -17,6 +17,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({
+    name: "",
     email: "",
     general: ""
   });
@@ -27,7 +28,11 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
   };
 
   const validateForm = () => {
-    const newErrors = { email: "", general: "" };
+    const newErrors = { name: "", email: "", general: "" };
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
     
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -36,7 +41,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     }
     
     setErrors(newErrors);
-    return !newErrors.email && !newErrors.general;
+    return !newErrors.name && !newErrors.email && !newErrors.general;
   };
 
   const submitToBackend = async (data: { name: string; email: string }) => {
@@ -64,7 +69,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     if (!validateForm()) return;
     
     setIsSubmitting(true);
-    setErrors({ email: "", general: "" });
+    setErrors({ name: "", email: "", general: "" });
 
     try {
       await submitToBackend(formData);
@@ -84,6 +89,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       
     } catch (error) {
       setErrors({
+        name: "",
         email: "",
         general: "Something went wrong. Please try again later."
       });
@@ -101,7 +107,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     if (!isSubmitting) {
       onClose();
       setFormData({ name: "", email: "" });
-      setErrors({ email: "", general: "" });
+      setErrors({ name: "", email: "", general: "" });
       setIsSubmitted(false);
     }
   };
@@ -141,15 +147,32 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               <div>
                 <Input
                   type="text"
-                  placeholder="Your Name (optional)"
+                  placeholder="Your Name *"
                   value={formData.name}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    name: e.target.value
-                  })}
-                  className="w-full px-4 py-3 rounded-xl border border-brand-accent/30 focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
-                  aria-label="Your name (optional)"
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      name: e.target.value
+                    });
+                    if (errors.name) {
+                      setErrors({ ...errors, name: "" });
+                    }
+                  }}
+                  required
+                  className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 ${
+                    errors.name 
+                      ? 'border-red-400 focus:border-red-400' 
+                      : 'border-brand-accent/30 focus:border-brand-accent'
+                  }`}
+                  aria-label="Your name (required)"
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
                 />
+                {errors.name && (
+                  <p id="name-error" className="text-red-500 text-sm mt-1" role="alert">
+                    {errors.name}
+                  </p>
+                )}
               </div>
               
               <div>
@@ -167,12 +190,12 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
                     }
                   }}
                   required
-                  className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 ${
+                  className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 ${
                     errors.email 
                       ? 'border-red-400 focus:border-red-400' 
                       : 'border-brand-accent/30 focus:border-brand-accent'
                   }`}
-                  aria-label="Your email address"
+                  aria-label="Your email address (required)"
                   aria-invalid={errors.email ? 'true' : 'false'}
                   aria-describedby={errors.email ? 'email-error' : undefined}
                 />
