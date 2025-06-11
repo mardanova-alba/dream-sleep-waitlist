@@ -1,11 +1,17 @@
+
 import { Button } from "@/components/ui/button";
+import MoneyCloudBackground from "./MoneyCloudBackground";
+
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
 }
-const HeroSection = ({
-  onJoinWaitlist
-}: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-br from-sky-50 to-sky-900\\n">
+
+const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-br from-sky-50 to-sky-100">
+      {/* Money Cloud Background */}
+      <MoneyCloudBackground />
+      
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
       
@@ -16,9 +22,6 @@ const HeroSection = ({
       </div>
 
       <div className="relative max-w-5xl mx-auto text-center z-10">
-        {/* Logo */}
-        
-
         {/* Main headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-text mb-6 animate-fade-in leading-tight">
           <span className="gradient-text">MoneyDream.AI</span>
@@ -36,7 +39,11 @@ const HeroSection = ({
 
         {/* CTA Button */}
         <div className="animate-fade-in">
-          <Button onClick={onJoinWaitlist} className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-blue-300 hover:bg-blue-200">
+          <Button 
+            onClick={onJoinWaitlist} 
+            className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-blue-300 hover:bg-blue-200"
+            aria-label="Join the waitlist for MoneyDream.AI"
+          >
             Join Waitlist
           </Button>
         </div>
@@ -48,6 +55,8 @@ const HeroSection = ({
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
