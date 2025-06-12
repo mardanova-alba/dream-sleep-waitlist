@@ -28,7 +28,7 @@ const HeroSection = ({
         </h1>
 
         {/* Subtext */}
-        <p className="text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in drop-shadow-md md:text-lg py-0 px-[58px] text-[#f4e290]/80">Autonomous, hedge-fund-grade trading powered by modular AI agents. 
+        <p className="text-base sm:text-lg mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in drop-shadow-md md:text-lg py-0 text-[#f4e290]/80 px-[65px] text-center">Autonomous, hedge-fund-grade trading powered by modular AI agents. 
 Let advanced algorithms work 24/7 while you rest.</p>
 
         {/* CTA Button */}
