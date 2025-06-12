@@ -39,12 +39,10 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // Validate name (required)
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
 
-    // Validate email (required and format)
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
@@ -66,7 +64,6 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       ]);
 
     if (error) {
-      // Check if it's a duplicate email error
       if (error.code === '23505') {
         throw new Error("This email is already on our waitlist!");
       }
@@ -93,7 +90,6 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
         description: "Thank you for joining! We'll be in touch soon.",
       });
 
-      // Reset form after successful submission
       setTimeout(() => {
         setFormData({ name: "", email: "" });
         setIsSubmitted(false);
@@ -119,7 +115,6 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       [field]: e.target.value
     }));
     
-    // Clear field-specific error when user starts typing
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -141,19 +136,19 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 card-shadow animate-scale-in">
-        <div className="text-center mb-6">
-          <h3 className="text-xl md:text-2xl font-bold text-brand-text mb-2">
+      <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 max-w-sm sm:max-w-md w-full mx-4 card-shadow animate-scale-in">
+        <div className="text-center mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-text mb-2">
             Join the Waitlist
           </h3>
-          <p className="text-sm md:text-base text-brand-text/70">
+          <p className="text-xs sm:text-sm md:text-base text-brand-text/70">
             Be the first to experience the future of trading
           </p>
         </div>
 
         {errors.general && (
           <div 
-            className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm"
+            className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-xs sm:text-sm"
             role="alert"
             aria-live="polite"
           >
@@ -174,7 +169,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               onChange={handleInputChange('name')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-sm md:text-base ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-xs sm:text-sm md:text-base ${
                 errors.name 
                   ? 'border-red-400 focus:border-red-400' 
                   : 'border-brand-accent/30 focus:border-brand-accent'
@@ -185,7 +180,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.name && (
               <p 
                 id="name-error" 
-                className="mt-1 text-xs md:text-sm text-red-600"
+                className="mt-1 text-xs text-red-600"
                 role="alert"
               >
                 {errors.name}
@@ -205,7 +200,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               onChange={handleInputChange('email')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-sm md:text-base ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-xs sm:text-sm md:text-base ${
                 errors.email 
                   ? 'border-red-400 focus:border-red-400' 
                   : 'border-brand-accent/30 focus:border-brand-accent'
@@ -216,7 +211,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.email && (
               <p 
                 id="email-error" 
-                className="mt-1 text-xs md:text-sm text-red-600"
+                className="mt-1 text-xs text-red-600"
                 role="alert"
               >
                 {errors.email}
@@ -224,20 +219,20 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             )}
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-2 sm:pt-4">
             <Button
               type="button"
               onClick={handleClose}
               variant="outline"
               disabled={isSubmitting}
-              className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300 disabled:opacity-50 text-sm md:text-base"
+              className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300 disabled:opacity-50 text-xs sm:text-sm md:text-base py-2 sm:py-3"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting || isSubmitted}
-              className={`flex-1 pill-button text-sm md:text-base font-extralight text-brand-text text-center disabled:opacity-50 disabled:cursor-not-allowed ${
+              className={`flex-1 pill-button text-xs sm:text-sm md:text-base font-extralight text-brand-text text-center disabled:opacity-50 disabled:cursor-not-allowed py-2 sm:py-3 ${
                 isSubmitted 
                   ? 'bg-green-500 hover:bg-green-500' 
                   : 'bg-sky-400 hover:bg-sky-300'
@@ -245,7 +240,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               aria-live="polite"
             >
               {isSubmitted 
-                ? "You're on the Waitlist!" 
+                ? "You're on the List!" 
                 : isSubmitting 
                   ? "Joining..." 
                   : "Join Waitlist"
