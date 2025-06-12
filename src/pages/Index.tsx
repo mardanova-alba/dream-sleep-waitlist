@@ -14,7 +14,7 @@ const Index = () => {
   const handleCloseWaitlist = () => {
     setIsWaitlistOpen(false);
   };
-  return <div className="min-h-screen bg-[#cee8ff]">
+  return <div className="min-h-screen bg-transparent">
       <HeroSection onJoinWaitlist={handleJoinWaitlist} />
       <ProblemSection />
       <SolutionSection />
