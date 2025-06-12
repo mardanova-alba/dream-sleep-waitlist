@@ -20,7 +20,7 @@ const HeroSection = ({
       <div className="relative max-w-5xl mx-auto text-center z-10">
         {/* Main headline */}
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-lg px-2">
-          <span className="gradient-text text-8xl text-center font-extrabold ">MoneyDream.AI</span>
+          <span className="gradient-text text-8xl text-center font-extrabold text-brand-accent">MoneyDream.AI</span>
           <br />
           <span className="text-2xl sm:text-3xl lg:text-6xl text-white/90 font-light md:text-6xl">
             Earn While You Sleep
