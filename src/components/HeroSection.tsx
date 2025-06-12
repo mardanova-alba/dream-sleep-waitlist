@@ -22,7 +22,7 @@ const HeroSection = ({
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-lg px-2">
           <span className="gradient-text text-8xl">MoneyDream.AI</span>
           <br />
-          <span className="text-2xl sm:text-3xl lg:text-6xl font-light text-white/90 md:text-6xl">
+          <span className="gradient-text text-6xl">
             Earn While You Sleep
           </span>
         </h1>
