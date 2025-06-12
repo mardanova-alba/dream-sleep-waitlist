@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistFormProps {
   isOpen: boolean;
@@ -54,19 +55,23 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const submitToBackend = async (data: FormData): Promise<void> => {
-    // Simulate backend API call
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        // Simulate 90% success rate for demo purposes
-        if (Math.random() > 0.1) {
-          console.log("Waitlist data submitted:", data);
-          resolve();
-        } else {
-          reject(new Error("Service temporarily unavailable"));
+  const submitToSupabase = async (data: FormData): Promise<void> => {
+    const { error } = await supabase
+      .from('waitlist')
+      .insert([
+        {
+          name: data.name.trim(),
+          email: data.email.trim().toLowerCase()
         }
-      }, 1500);
-    });
+      ]);
+
+    if (error) {
+      // Check if it's a duplicate email error
+      if (error.code === '23505') {
+        throw new Error("This email is already on our waitlist!");
+      }
+      throw new Error(error.message || "Failed to join waitlist");
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,7 +85,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     setErrors({});
 
     try {
-      await submitToBackend(formData);
+      await submitToSupabase(formData);
       
       setIsSubmitted(true);
       toast({
@@ -100,7 +105,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       setErrors({ general: errorMessage });
       toast({
         title: "Submission failed",
-        description: "Please try again in a moment.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -136,19 +141,19 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full card-shadow animate-scale-in">
+      <div className="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full mx-4 card-shadow animate-scale-in">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-brand-text mb-2">
+          <h3 className="text-xl md:text-2xl font-bold text-brand-text mb-2">
             Join the Waitlist
           </h3>
-          <p className="text-brand-text/70">
+          <p className="text-sm md:text-base text-brand-text/70">
             Be the first to experience the future of trading
           </p>
         </div>
 
         {errors.general && (
           <div 
-            className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+            className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm"
             role="alert"
             aria-live="polite"
           >
@@ -169,7 +174,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               onChange={handleInputChange('name')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 ${
+              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-sm md:text-base ${
                 errors.name 
                   ? 'border-red-400 focus:border-red-400' 
                   : 'border-brand-accent/30 focus:border-brand-accent'
@@ -180,7 +185,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.name && (
               <p 
                 id="name-error" 
-                className="mt-1 text-sm text-red-600"
+                className="mt-1 text-xs md:text-sm text-red-600"
                 role="alert"
               >
                 {errors.name}
@@ -200,7 +205,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               onChange={handleInputChange('email')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 ${
+              className={`w-full px-4 py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-sm md:text-base ${
                 errors.email 
                   ? 'border-red-400 focus:border-red-400' 
                   : 'border-brand-accent/30 focus:border-brand-accent'
@@ -211,7 +216,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.email && (
               <p 
                 id="email-error" 
-                className="mt-1 text-sm text-red-600"
+                className="mt-1 text-xs md:text-sm text-red-600"
                 role="alert"
               >
                 {errors.email}
@@ -225,14 +230,14 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
               onClick={handleClose}
               variant="outline"
               disabled={isSubmitting}
-              className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300 disabled:opacity-50"
+              className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300 disabled:opacity-50 text-sm md:text-base"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting || isSubmitted}
-              className={`flex-1 pill-button text-base font-extralight text-brand-text text-center disabled:opacity-50 disabled:cursor-not-allowed ${
+              className={`flex-1 pill-button text-sm md:text-base font-extralight text-brand-text text-center disabled:opacity-50 disabled:cursor-not-allowed ${
                 isSubmitted 
                   ? 'bg-green-500 hover:bg-green-500' 
                   : 'bg-sky-400 hover:bg-sky-300'

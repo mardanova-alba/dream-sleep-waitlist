@@ -1,53 +1,62 @@
+
 import { Button } from "@/components/ui/button";
+
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
 }
-const HeroSection = ({
-  onJoinWaitlist
-}: HeroSectionProps) => {
-  return <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden bg-gradient-to-br from-brand-dark to-brand-light bg-brand-accent\\n">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-light via-white to-brand-primary opacity-60"></div>
+
+const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-6 pt-20 pb-16 overflow-hidden">
+      {/* Fixed Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat"
+        style={{
+          backgroundImage: "url('/money-cloud-bg.jpg')",
+        }}
+      />
       
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 bg-sky-200">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-brand-accent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-brand-primary rounded-full blur-3xl"></div>
-      </div>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-light/20 via-transparent to-brand-primary/20"></div>
 
       <div className="relative max-w-5xl mx-auto text-center z-10">
-        {/* Logo */}
-        
-
         {/* Main headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-text mb-6 animate-fade-in leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-lg px-2">
           <span className="gradient-text">MoneyDream.AI</span>
           <br />
-          <span className="text-3xl md:text-5xl lg:text-6xl font-light">
+          <span className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light text-white/90">
             Earn While You Sleep
           </span>
         </h1>
 
         {/* Subtext */}
-        <p className="text-lg md:text-xl text-brand-text/70 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
+        <p className="text-base sm:text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in drop-shadow-md px-4">
           Autonomous, hedge-fund-grade trading powered by modular AI agents. 
           Let advanced algorithms work 24/7 while you rest.
         </p>
 
         {/* CTA Button */}
-        <div className="animate-fade-in">
-          <Button onClick={onJoinWaitlist} className="pill-button text-brand-text text-lg px-12 py-4 h-auto bg-blue-300 hover:bg-blue-200">
+        <div className="animate-fade-in px-4">
+          <Button 
+            onClick={onJoinWaitlist} 
+            className="pill-button text-brand-text text-base md:text-lg px-8 md:px-12 py-3 md:py-4 h-auto bg-blue-300 hover:bg-blue-200 shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto"
+          >
             Join Waitlist
           </Button>
         </div>
 
-        {/* Hero Art */}
+        {/* Hero Art placeholder - removed since we're using background image */}
         <div className="mt-16 animate-fade-in">
           <div className="relative max-w-3xl mx-auto">
-            
+            {/* Content can be added here if needed */}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
