@@ -12,7 +12,7 @@ const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat"
         style={{
-          backgroundImage: "url('/money-cloud-bg.jpg')",
+          backgroundImage: "url('/lovable-uploads/e0c1f05f-ba58-447e-826c-07c8f1d7211b.png')",
         }}
       />
       
