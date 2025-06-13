@@ -1,13 +1,11 @@
-
 import { Button } from "@/components/ui/button";
-
 interface FooterSectionProps {
   onJoinWaitlist: () => void;
 }
-
-const FooterSection = ({ onJoinWaitlist }: FooterSectionProps) => {
-  return (
-    <footer className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+const FooterSection = ({
+  onJoinWaitlist
+}: FooterSectionProps) => {
+  return <footer className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
       
@@ -20,10 +18,7 @@ const FooterSection = ({ onJoinWaitlist }: FooterSectionProps) => {
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
             Join thousands of forward-thinking investors who are already on the waitlist
           </p>
-          <Button 
-            onClick={onJoinWaitlist} 
-            className="pill-button text-white text-sm sm:text-base md:text-lg font-medium px-8 sm:px-10 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 w-full sm:w-auto max-w-xs sm:max-w-none shadow-xl hover:shadow-2xl transition-all duration-300"
-          >
+          <Button onClick={onJoinWaitlist} className="pill-button text-white text-sm sm:text-base md:text-lg font-medium px-8 sm:px-10 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 w-full sm:w-auto max-w-xs sm:max-w-none shadow-xl hover:shadow-2xl transition-all duration-300">
             Join the Waitlist
           </Button>
         </div>
@@ -45,11 +40,9 @@ const FooterSection = ({ onJoinWaitlist }: FooterSectionProps) => {
 
         {/* Footer bottom */}
         <div className="text-center text-white/70 text-xs sm:text-sm drop-shadow-md">
-          <p>&copy; 2024 MoneyDream.AI. All rights reserved.</p>
+          <p>© 2025 MoneyDream.AI. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default FooterSection;
