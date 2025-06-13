@@ -16,29 +16,31 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-brand-accent">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
             The Retail Investor Gap
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Despite unprecedented access to markets, retail investors face systematic disadvantages
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {problems.map((problem, index) => (
             <div 
               key={index} 
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl"
+              className="border border-gray-50 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-[0_8px_24px_rgba(0,0,0,0.20)] transition-all duration-300 hover:-translate-y-1 bg-neutral-50"
             >
-              <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-6">
-                {problem.stat}
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4">
+                  {problem.stat}
+                </div>
+                <p className="text-sm sm:text-base text-brand-text/80 leading-relaxed">
+                  {problem.description}
+                </p>
               </div>
-              <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                {problem.description}
-              </p>
             </div>
           ))}
         </div>
