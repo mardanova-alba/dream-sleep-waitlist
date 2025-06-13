@@ -1,5 +1,5 @@
 
-import { Clock, Clock as Strategy, FileText, Rocket, Calendar } from "lucide-react";
+import { Clock, Target, FileText, Rocket, Calendar } from "lucide-react";
 
 const SolutionSection = () => {
   const solutions = [
@@ -9,7 +9,7 @@ const SolutionSection = () => {
       description: "Autonomous decision-making powered by advanced machine learning algorithms"
     },
     {
-      icon: <Strategy className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
       title: "Multi-Strategy Stack",
       description: "Diversified trading approaches adapted to market conditions in real-time"
     },
@@ -31,13 +31,16 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-brand-light">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+      {/* Semi-transparent overlay for better readability */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
             Our Solution
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
             Professional-grade trading infrastructure made accessible to everyone
           </p>
         </div>
@@ -46,15 +49,15 @@ const SolutionSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index} 
-              className="group bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-6 sm:p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="text-sky-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-yellow-300 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {solution.icon}
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-sky-950 font-bold leading-tight">
+              <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-white font-bold leading-tight drop-shadow-lg">
                 {solution.title}
               </h3>
-              <p className="text-sm sm:text-base text-brand-text/70 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-md">
                 {solution.description}
               </p>
             </div>

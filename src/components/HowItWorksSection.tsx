@@ -29,13 +29,16 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-brand-light to-brand-primary/20">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+      {/* Semi-transparent overlay for better readability */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
             How It Works
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
             Get started in minutes with our streamlined onboarding process
           </p>
         </div>
@@ -44,18 +47,18 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div 
               key={index}
-              className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6 bg-white rounded-2xl p-6 sm:p-8 card-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] transition-all duration-300"
+              className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-brand-accent rounded-full flex items-center justify-center">
-                <span className="text-sm sm:text-base md:text-lg font-bold text-brand-text">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-yellow-300/90 rounded-full flex items-center justify-center">
+                <span className="text-sm sm:text-base md:text-lg font-bold text-gray-900">
                   {step.number}
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-brand-text mb-2 sm:mb-3 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-3 leading-tight drop-shadow-lg">
                   {step.title}
                 </h3>
-                <p className="text-sm sm:text-base text-brand-text/70 leading-relaxed">
+                <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-md">
                   {step.description}
                 </p>
               </div>

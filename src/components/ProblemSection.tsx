@@ -16,13 +16,16 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-brand-accent">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+      {/* Semi-transparent overlay for better readability */}
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
             The Retail Investor Gap
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
             Despite unprecedented access to markets, retail investors face systematic disadvantages
           </p>
         </div>
@@ -31,13 +34,13 @@ const ProblemSection = () => {
           {problems.map((problem, index) => (
             <div 
               key={index} 
-              className="border border-gray-50 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-[0_8px_24px_rgba(0,0,0,0.20)] transition-all duration-300 hover:-translate-y-1 bg-neutral-50"
+              className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-yellow-300 mb-3 sm:mb-4 drop-shadow-lg">
                   {problem.stat}
                 </div>
-                <p className="text-sm sm:text-base text-brand-text/80 leading-relaxed">
+                <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-md">
                   {problem.description}
                 </p>
               </div>
