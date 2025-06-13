@@ -1,5 +1,5 @@
 
-import { Clock, Strategy, FileText, Rocket, Calendar } from "lucide-react";
+import { Clock, Target, FileText, Rocket, Calendar } from "lucide-react";
 
 const SolutionSection = () => {
   const solutions = [
@@ -9,7 +9,7 @@ const SolutionSection = () => {
       description: "Autonomous decision-making powered by advanced machine learning algorithms"
     },
     {
-      icon: <Strategy className="w-10 h-10" />,
+      icon: <Target className="w-10 h-10" />,
       title: "Multi-Strategy Stack",
       description: "Diversified trading approaches adapted to market conditions in real-time"
     },
@@ -31,13 +31,13 @@ const SolutionSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
             Our Solution
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
             Professional-grade trading infrastructure made accessible to everyone
           </p>
         </div>
@@ -46,15 +46,15 @@ const SolutionSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index} 
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-3"
+              className="group bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/25"
             >
-              <div className="text-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-purple-300 mb-6 group-hover:scale-110 group-hover:text-purple-200 transition-all duration-300">
                 {solution.icon}
               </div>
-              <h3 className="text-2xl mb-4 text-gray-900 font-bold leading-tight">
+              <h3 className="text-2xl mb-4 text-white font-bold leading-tight">
                 {solution.title}
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-blue-100 leading-relaxed">
                 {solution.description}
               </p>
             </div>
