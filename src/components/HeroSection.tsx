@@ -1,13 +1,11 @@
-
 import { Button } from "@/components/ui/button";
-
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
 }
-
-const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
+const HeroSection = ({
+  onJoinWaitlist
+}: HeroSectionProps) => {
+  return <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-12 sm:pb-16">
       <div className="relative max-w-7xl mx-auto text-center z-10 w-full">
         {/* Main headline */}
         <div className="mb-6 sm:mb-8 lg:mb-10 animate-fade-in">
@@ -27,16 +25,11 @@ const HeroSection = ({ onJoinWaitlist }: HeroSectionProps) => {
 
         {/* CTA Button */}
         <div className="animate-fade-in px-4 sm:px-6">
-          <Button 
-            onClick={onJoinWaitlist} 
-            className="pill-button text-white text-sm sm:text-base md:text-lg font-medium px-6 sm:px-8 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none"
-          >
+          <Button onClick={onJoinWaitlist} className="pill-button sm:text-base md:text-lg font-medium px-6 sm:px-8 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none text-[#ffee61] text-2xl">
             Join Waitlist
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
