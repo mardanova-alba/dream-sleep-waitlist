@@ -21,11 +21,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Full page background */}
+      {/* Desktop background */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
         style={{
           backgroundImage: "url('/lovable-uploads/ff90ff01-c6e6-4ff4-853c-2f0dc2616b45.png')"
+        }}
+      />
+      
+      {/* Mobile background */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        style={{
+          backgroundImage: "url('/lovable-uploads/42260745-1326-4ba2-9922-b977dee14da1.png')"
         }}
       />
       

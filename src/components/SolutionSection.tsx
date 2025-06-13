@@ -33,7 +33,7 @@ const SolutionSection = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
@@ -49,7 +49,7 @@ const SolutionSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index} 
-              className="group bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 md:bg-white/20 bg-white/30"
             >
               <div className="text-yellow-300 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {solution.icon}

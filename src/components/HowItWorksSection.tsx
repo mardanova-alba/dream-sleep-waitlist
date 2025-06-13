@@ -1,3 +1,4 @@
+
 const HowItWorksSection = () => {
   const steps = [{
     number: "01",
@@ -22,7 +23,7 @@ const HowItWorksSection = () => {
   }];
   return <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
@@ -35,7 +36,7 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="space-y-6 sm:space-y-8">
-          {steps.map((step, index) => <div key={index} className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-600">
+          {steps.map((step, index) => <div key={index} className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-600 md:bg-white/20 bg-white/30">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-yellow-300/90 rounded-full flex items-center justify-center">
                 <span className="text-sm sm:text-base md:text-lg font-bold text-gray-900">
                   {step.number}

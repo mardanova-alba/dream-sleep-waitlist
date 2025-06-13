@@ -1,3 +1,4 @@
+
 const RoadmapSection = () => {
   const milestones = [{
     quarter: "Q2 2025",
@@ -22,7 +23,7 @@ const RoadmapSection = () => {
   }];
   return <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
@@ -46,7 +47,7 @@ const RoadmapSection = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-600">
+                <div className="flex-1 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-600 md:bg-white/20 bg-white/30">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white leading-tight drop-shadow-lg">
                       {milestone.title}

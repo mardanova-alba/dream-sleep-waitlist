@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 interface FooterSectionProps {
   onJoinWaitlist: () => void;
@@ -7,7 +8,7 @@ const FooterSection = ({
 }: FooterSectionProps) => {
   return <footer className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Final CTA */}
@@ -24,7 +25,7 @@ const FooterSection = ({
         </div>
 
         {/* Risk Disclaimer */}
-        <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl mb-6 sm:mb-8">
+        <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl mb-6 sm:mb-8 md:bg-white/20 bg-white/30">
           <h3 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4 drop-shadow-lg">
             Risk Disclaimer
           </h3>
