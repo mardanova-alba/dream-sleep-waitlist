@@ -25,7 +25,7 @@ const HeroSection = ({
 
         {/* CTA Button */}
         <div className="animate-fade-in px-4 sm:px-6">
-          <Button onClick={onJoinWaitlist} className="pill-button sm:text-base md:text-lg font-medium px-6 sm:px-8 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none text-[#ffee61] text-2xl">
+          <Button onClick={onJoinWaitlist} className="pill-button sm:text-base md:text-lg font-medium px-6 sm:px-8 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto max-w-xs sm:max-w-none text-yellow-300 text-2xl ">
             Join Waitlist
           </Button>
         </div>
