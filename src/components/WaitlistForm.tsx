@@ -40,13 +40,13 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
     const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "name is required";
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "email is required";
+      newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "please enter a valid email address";
+      newErrors.email = "Please enter a valid email address";
     }
 
     setErrors(newErrors);
@@ -65,9 +65,9 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
 
     if (error) {
       if (error.code === '23505') {
-        throw new Error("this email is already on our waitlist!");
+        throw new Error("This email is already on our waitlist!");
       }
-      throw new Error(error.message || "failed to join waitlist");
+      throw new Error(error.message || "Failed to join waitlist");
     }
   };
 
@@ -86,8 +86,8 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       
       setIsSubmitted(true);
       toast({
-        title: "welcome to the waitlist!",
-        description: "thank you for joining! we'll be in touch soon.",
+        title: "Welcome to the waitlist!",
+        description: "Thank you for joining! We'll be in touch soon.",
       });
 
       setTimeout(() => {
@@ -97,10 +97,10 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
       }, 2000);
 
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "failed to join waitlist";
+      const errorMessage = error instanceof Error ? error.message : "Failed to join waitlist";
       setErrors({ general: errorMessage });
       toast({
-        title: "submission failed",
+        title: "Submission failed",
         description: errorMessage,
         variant: "destructive",
       });
@@ -135,20 +135,20 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-      <div className="bg-white/20 backdrop-blur-xl rounded-3xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl border border-white/30 animate-scale-in">
-        <div className="text-center mb-6">
-          <h3 className="text-xl sm:text-2xl font-light text-white mb-2 lowercase tracking-wide">
-            join the waitlist
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 max-w-sm sm:max-w-md w-full mx-4 card-shadow animate-scale-in">
+        <div className="text-center mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-text mb-2">
+            Join the Waitlist
           </h3>
-          <p className="text-sm text-white/70 font-light lowercase">
-            be the first to experience the future of trading
+          <p className="text-xs sm:text-sm md:text-base text-brand-text/70">
+            Be the first to experience the future of trading
           </p>
         </div>
 
         {errors.general && (
           <div 
-            className="mb-4 p-3 bg-red-200/20 border border-red-300/30 text-red-100 rounded-2xl text-sm backdrop-blur-sm"
+            className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-xs sm:text-sm"
             role="alert"
             aria-live="polite"
           >
@@ -159,20 +159,20 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
             <label htmlFor="waitlist-name" className="sr-only">
-              your name
+              Your Name
             </label>
             <Input
               id="waitlist-name"
               type="text"
-              placeholder="your name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleInputChange('name')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-2xl border bg-white/20 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/40 backdrop-blur-sm text-center lowercase ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-xs sm:text-sm md:text-base ${
                 errors.name 
-                  ? 'border-red-300/50 focus:border-red-300/50' 
-                  : 'border-white/30 focus:border-white/50'
+                  ? 'border-red-400 focus:border-red-400' 
+                  : 'border-brand-accent/30 focus:border-brand-accent'
               }`}
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? "name-error" : undefined}
@@ -180,7 +180,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.name && (
               <p 
                 id="name-error" 
-                className="mt-1 text-xs text-red-200"
+                className="mt-1 text-xs text-red-600"
                 role="alert"
               >
                 {errors.name}
@@ -190,20 +190,20 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
           
           <div>
             <label htmlFor="waitlist-email" className="sr-only">
-              your email
+              Your Email
             </label>
             <Input
               id="waitlist-email"
               type="email"
-              placeholder="your email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleInputChange('email')}
               required
               disabled={isSubmitting || isSubmitted}
-              className={`w-full px-4 py-3 rounded-2xl border bg-white/20 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/40 backdrop-blur-sm text-center lowercase ${
+              className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border focus:ring-2 focus:ring-brand-accent/20 bg-sky-600 text-white placeholder:text-white/70 text-xs sm:text-sm md:text-base ${
                 errors.email 
-                  ? 'border-red-300/50 focus:border-red-300/50' 
-                  : 'border-white/30 focus:border-white/50'
+                  ? 'border-red-400 focus:border-red-400' 
+                  : 'border-brand-accent/30 focus:border-brand-accent'
               }`}
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? "email-error" : undefined}
@@ -211,7 +211,7 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             {errors.email && (
               <p 
                 id="email-error" 
-                className="mt-1 text-xs text-red-200"
+                className="mt-1 text-xs text-red-600"
                 role="alert"
               >
                 {errors.email}
@@ -219,31 +219,31 @@ const WaitlistForm = ({ isOpen, onClose }: WaitlistFormProps) => {
             )}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-2 sm:pt-4">
             <Button
               type="button"
               onClick={handleClose}
               variant="outline"
               disabled={isSubmitting}
-              className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20 disabled:opacity-50 rounded-2xl py-3 lowercase font-light backdrop-blur-sm"
+              className="flex-1 pill-button border-brand-accent/30 text-brand-text bg-gray-400 hover:bg-gray-300 disabled:opacity-50 text-xs sm:text-sm md:text-base py-2 sm:py-3"
             >
-              cancel
+              Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting || isSubmitted}
-              className={`flex-1 font-light text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed py-3 rounded-2xl lowercase shadow-lg hover:shadow-xl transition-all duration-300 ${
+              className={`flex-1 pill-button text-xs sm:text-sm md:text-base font-extralight text-brand-text text-center disabled:opacity-50 disabled:cursor-not-allowed py-2 sm:py-3 ${
                 isSubmitted 
-                  ? 'bg-green-200/80 hover:bg-green-200/80' 
-                  : 'bg-gradient-to-r from-purple-200/80 to-blue-200/80 hover:from-purple-300/90 hover:to-blue-300/90'
+                  ? 'bg-green-500 hover:bg-green-500' 
+                  : 'bg-sky-400 hover:bg-sky-300'
               }`}
               aria-live="polite"
             >
               {isSubmitted 
-                ? "you're on the list!" 
+                ? "You're on the List!" 
                 : isSubmitting 
-                  ? "joining..." 
-                  : "dream with us"
+                  ? "Joining..." 
+                  : "Join Waitlist"
               }
             </Button>
           </div>

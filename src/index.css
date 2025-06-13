@@ -3,54 +3,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import modern fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
-/* Definition of the design system */
 @layer base {
   :root {
     --background: 255 255 255;
     --foreground: 10 37 64;
+
     --card: 255 255 255;
     --card-foreground: 10 37 64;
+
     --popover: 255 255 255;
     --popover-foreground: 10 37 64;
+
     --primary: 224 244 255;
     --primary-foreground: 10 37 64;
+
     --secondary: 248 252 255;
     --secondary-foreground: 10 37 64;
+
     --muted: 248 252 255;
     --muted-foreground: 100 116 139;
+
     --accent: 191 233 255;
     --accent-foreground: 10 37 64;
+
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
+
     --border: 226 232 240;
     --input: 226 232 240;
     --ring: 59 130 246;
+
     --radius: 0.5rem;
+
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 10 37 64;
+    --sidebar-primary: 10 37 64;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 248 252 255;
+    --sidebar-accent-foreground: 10 37 64;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 59 130 246;
   }
 
   .dark {
     --background: 10 37 64;
     --foreground: 248 250 252;
+
     --card: 15 42 69;
     --card-foreground: 248 250 252;
+
     --popover: 15 42 69;
     --popover-foreground: 248 250 252;
+
     --primary: 191 233 255;
     --primary-foreground: 10 37 64;
+
     --secondary: 15 42 69;
     --secondary-foreground: 248 250 252;
+
     --muted: 15 42 69;
     --muted-foreground: 148 163 184;
+
     --accent: 224 244 255;
     --accent-foreground: 10 37 64;
+
     --destructive: 185 28 28;
     --destructive-foreground: 248 250 252;
+
     --border: 30 58 138;
     --input: 30 58 138;
     --ring: 147 197 253;
+
+    --sidebar-background: 10 37 64;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 191 233 255;
+    --sidebar-primary-foreground: 10 37 64;
+    --sidebar-accent: 15 42 69;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 30 58 138;
+    --sidebar-ring: 147 197 253;
   }
 }
 
@@ -61,7 +94,6 @@
 
   body {
     @apply bg-white text-brand-text font-inter;
-    font-family: 'Inter', sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
     scroll-behavior: smooth;
@@ -74,7 +106,7 @@
 
 @layer components {
   .pill-button {
-    @apply rounded-full px-6 sm:px-8 py-2 sm:py-3 font-light transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:scale-105;
+    @apply rounded-full px-6 sm:px-8 py-2 sm:py-3 font-medium transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:scale-105;
   }
   
   .card-shadow {
@@ -85,7 +117,7 @@
     @apply bg-gradient-to-r from-brand-text to-blue-600 bg-clip-text text-transparent;
   }
 
-  /* Enhanced dreamy animations */
+  /* Enhanced animation for mobile */
   @keyframes scale-in {
     0% {
       transform: scale(0.95);
@@ -97,40 +129,12 @@
     }
   }
 
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
   .animate-scale-in {
-    animation: scale-in 0.5s ease-out;
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: scale-in 0.2s ease-out;
   }
 }
 
-/* Responsive font scaling for dreamy typography */
+/* Responsive font scaling */
 @media (max-width: 640px) {
   html {
     font-size: 14px;
@@ -148,17 +152,4 @@
   button, .pill-button {
     min-height: 44px;
   }
-}
-
-/* Glassmorphism utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-strong {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
