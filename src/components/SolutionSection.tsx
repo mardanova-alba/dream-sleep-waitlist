@@ -4,57 +4,60 @@ import { Clock, Clock as Strategy, FileText, Rocket, Calendar } from "lucide-rea
 const SolutionSection = () => {
   const solutions = [
     {
-      icon: <Clock className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <Clock className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />,
       title: "Agentic AI Engine",
       description: "Autonomous decision-making powered by advanced machine learning algorithms"
     },
     {
-      icon: <Strategy className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <Strategy className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />,
       title: "Multi-Strategy Stack",
       description: "Diversified trading approaches adapted to market conditions in real-time"
     },
     {
-      icon: <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <FileText className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />,
       title: "Hands-Free Portfolio Management",
       description: "Complete automation from analysis to execution, requiring zero daily input"
     },
     {
-      icon: <Rocket className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <Rocket className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />,
       title: "Performance-Aligned Fees",
       description: "We only profit when you profit — aligned incentives for mutual success"
     },
     {
-      icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+      icon: <Calendar className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10" />,
       title: "$DREAM Token Yield",
       description: "Earn additional rewards through our native token ecosystem"
     }
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-brand-light">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
+      {/* Section overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/95 to-indigo-50/95 backdrop-blur-sm"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
             Our Solution
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 font-medium">
             Professional-grade trading infrastructure made accessible to everyone
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {solutions.map((solution, index) => (
             <div 
               key={index} 
-              className="group bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-6 sm:p-8 card-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-3 border border-white/50"
             >
-              <div className="text-sky-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-blue-600 mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-300">
                 {solution.icon}
               </div>
-              <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-sky-950 font-bold leading-tight">
+              <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-gray-900 font-bold leading-tight">
                 {solution.title}
               </h3>
-              <p className="text-sm sm:text-base text-brand-text/70 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
                 {solution.description}
               </p>
             </div>

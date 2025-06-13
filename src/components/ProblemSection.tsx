@@ -16,28 +16,31 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-brand-accent">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-text mb-4 sm:mb-6 leading-tight">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
+      {/* Section overlay for readability */}
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-sm"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
             The Retail Investor Gap
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 font-medium">
             Despite unprecedented access to markets, retail investors face systematic disadvantages
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {problems.map((problem, index) => (
             <div 
               key={index} 
-              className="border border-gray-50 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-[0_8px_24px_rgba(0,0,0,0.20)] transition-all duration-300 hover:-translate-y-1 bg-neutral-50"
+              className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 sm:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 hover:bg-white/90"
             >
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-3 sm:mb-4">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6">
                   {problem.stat}
                 </div>
-                <p className="text-sm sm:text-base text-brand-text/80 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-800 leading-relaxed font-medium">
                   {problem.description}
                 </p>
               </div>
