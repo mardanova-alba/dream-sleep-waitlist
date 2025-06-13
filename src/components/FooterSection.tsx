@@ -12,13 +12,13 @@ const FooterSection = ({
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Final CTA */}
         <div className="text-center mb-12 sm:mb-14 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight drop-shadow-lg text-blue-900 md:text-5xl">
             Ready to Dream Bigger?
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 drop-shadow-md">
             Join thousands of forward-thinking investors who are already on the waitlist
           </p>
-          <Button onClick={onJoinWaitlist} className="pill-button text-white text-sm sm:text-base md:text-lg font-medium px-8 sm:px-10 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 w-full sm:w-auto max-w-xs sm:max-w-none shadow-xl hover:shadow-2xl transition-all duration-300">
+          <Button onClick={onJoinWaitlist} className="pill-button sm:text-base md:text-lg font-medium px-8 sm:px-10 md:px-12 py-3 sm:py-3 md:py-4 h-auto bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 w-full sm:w-auto max-w-xs sm:max-w-none shadow-xl hover:shadow-2xl transition-all duration-300 text-blue-900 text-xl">
             Join the Waitlist
           </Button>
         </div>
