@@ -16,34 +16,29 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
-      {/* Section overlay for readability */}
-      <div className="absolute inset-0 bg-white/95 backdrop-blur-sm"></div>
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
             The Retail Investor Gap
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 font-medium">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Despite unprecedented access to markets, retail investors face systematic disadvantages
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {problems.map((problem, index) => (
             <div 
               key={index} 
-              className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-3xl p-8 sm:p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 hover:bg-white/90"
+              className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-xl"
             >
-              <div className="text-center">
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 sm:mb-6">
-                  {problem.stat}
-                </div>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed font-medium">
-                  {problem.description}
-                </p>
+              <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-6">
+                {problem.stat}
               </div>
+              <p className="text-lg text-gray-700 leading-relaxed font-medium">
+                {problem.description}
+              </p>
             </div>
           ))}
         </div>

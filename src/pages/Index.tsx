@@ -20,26 +20,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Full page background */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat z-0"
-        style={{
-          backgroundImage: "url('/lovable-uploads/98e9dc4f-ac73-4286-bbca-f1218462eec5.png')"
-        }}
-      />
+    <div className="min-h-screen">
+      <HeroSection onJoinWaitlist={handleJoinWaitlist} />
+      <ProblemSection />
+      <SolutionSection />
+      <HowItWorksSection />
+      <RoadmapSection />
+      <FooterSection onJoinWaitlist={handleJoinWaitlist} />
       
-      {/* Content overlay */}
-      <div className="relative z-10">
-        <HeroSection onJoinWaitlist={handleJoinWaitlist} />
-        <ProblemSection />
-        <SolutionSection />
-        <HowItWorksSection />
-        <RoadmapSection />
-        <FooterSection onJoinWaitlist={handleJoinWaitlist} />
-        
-        <WaitlistForm isOpen={isWaitlistOpen} onClose={handleCloseWaitlist} />
-      </div>
+      <WaitlistForm isOpen={isWaitlistOpen} onClose={handleCloseWaitlist} />
     </div>
   );
 };
