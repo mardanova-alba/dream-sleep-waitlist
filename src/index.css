@@ -97,40 +97,87 @@
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
     scroll-behavior: smooth;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html {
     scroll-behavior: smooth;
+    /* Enhanced scroll performance */
+    scroll-padding-top: 0;
+    overflow-x: hidden;
+  }
+
+  /* Optimize background performance */
+  .background-fixed {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  /* Smooth transitions for mobile background */
+  @media (max-width: 768px) {
+    .mobile-bg-optimized {
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
 @layer components {
   .pill-button {
     @apply rounded-full px-6 sm:px-8 py-2 sm:py-3 font-medium transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:scale-105;
+    /* Hardware acceleration for smooth animations */
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
   }
   
   .card-shadow {
     @apply shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)];
+    /* Optimize shadow transitions */
+    will-change: box-shadow;
   }
   
   .gradient-text {
     @apply bg-gradient-to-r from-brand-text to-blue-600 bg-clip-text text-transparent;
   }
 
-  /* Enhanced animation for mobile */
+  /* Enhanced animation for mobile with performance optimization */
   @keyframes scale-in {
     0% {
-      transform: scale(0.95);
+      transform: scale(0.95) translate3d(0, 0, 0);
       opacity: 0;
     }
     100% {
-      transform: scale(1);
+      transform: scale(1) translate3d(0, 0, 0);
       opacity: 1;
     }
   }
 
   .animate-scale-in {
     animation: scale-in 0.2s ease-out;
+    will-change: transform, opacity;
+  }
+
+  /* Smooth scroll optimization */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Performance optimized animations */
+  .optimized-transition {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
   }
 }
 
@@ -151,5 +198,36 @@
 @media (max-width: 768px) {
   button, .pill-button {
     min-height: 44px;
+  }
+  
+  /* Optimize mobile scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+}
+
+/* Prevent layout shifts and optimize rendering */
+img, video {
+  max-width: 100%;
+  height: auto;
+  will-change: auto;
+}
+
+/* Optimize background image loading */
+.bg-optimized {
+  background-image: url('/lovable-uploads/ff90ff01-c6e6-4ff4-853c-2f0dc2616b45.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .bg-optimized {
+    background-image: url('/lovable-uploads/42260745-1326-4ba2-9922-b977dee14da1.png');
+    background-attachment: scroll;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
   }
 }

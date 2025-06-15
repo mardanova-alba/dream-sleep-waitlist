@@ -20,25 +20,25 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen relative">
-      {/* Desktop background */}
+    <div className="min-h-screen relative smooth-scroll">
+      {/* Optimized Desktop background */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat hidden md:block background-fixed bg-optimized"
         style={{
           backgroundImage: "url('/lovable-uploads/ff90ff01-c6e6-4ff4-853c-2f0dc2616b45.png')"
         }}
       />
       
-      {/* Mobile background */}
+      {/* Optimized Mobile background */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:hidden mobile-bg-optimized"
         style={{
           backgroundImage: "url('/lovable-uploads/42260745-1326-4ba2-9922-b977dee14da1.png')"
         }}
       />
       
-      {/* Content overlay */}
-      <div className="relative z-10">
+      {/* Content overlay with optimized transitions */}
+      <div className="relative z-10 optimized-transition">
         <HeroSection onJoinWaitlist={handleJoinWaitlist} />
         <ProblemSection />
         <SolutionSection />
