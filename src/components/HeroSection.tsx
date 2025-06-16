@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 interface HeroSectionProps {
   onJoinWaitlist: () => void;
@@ -13,7 +12,7 @@ const HeroSection = ({
       <div className="relative max-w-7xl mx-auto text-center z-10 w-full">
         {/* Main headline */}
         <div className="mb-6 sm:mb-8 lg:mb-10 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-extrabold mb-2 sm:mb-4 leading-tight text-white drop-shadow-2xl md:text-7xl">
+          <h1 className="text-4xl sm:text-5xl xl:text-8xl font-extrabold mb-2 sm:mb-4 leading-tight drop-shadow-2xl md:text-7xl text-[#121298] lg:text-7xl">
             MoneyDream.AI
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-white/95 font-light leading-tight drop-shadow-lg">
