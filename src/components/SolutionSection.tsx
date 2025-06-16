@@ -49,7 +49,7 @@ const SolutionSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index} 
-              className="group bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 md:bg-white/20 bg-white/30"
+              className="group bg-white/30 backdrop-blur-md border-2 border-white/40 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 md:bg-white/30 hover:bg-white/35"
             >
               <div className="text-yellow-300 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {solution.icon}
@@ -57,7 +57,7 @@ const SolutionSection = () => {
               <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-white font-bold leading-tight drop-shadow-lg">
                 {solution.title}
               </h3>
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed drop-shadow-md">
+              <p className="text-sm sm:text-base text-white/95 leading-relaxed drop-shadow-md font-medium">
                 {solution.description}
               </p>
             </div>
