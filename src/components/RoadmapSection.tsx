@@ -1,34 +1,26 @@
-
 const RoadmapSection = () => {
-  const milestones = [
-    {
-      quarter: "Q2 2025",
-      title: "Closed Beta Launch", 
-      description: "Limited access for stocks trading with select partners",
-      status: "upcoming"
-    },
-    {
-      quarter: "Q3 2025",
-      title: "Crypto + $DREAM Staking",
-      description: "Expand to cryptocurrency markets and introduce token rewards",
-      status: "upcoming"
-    },
-    {
-      quarter: "Q4 2025", 
-      title: "Public Launch + Rewards",
-      description: "Full public release with comprehensive reward ecosystem",
-      status: "upcoming"
-    },
-    {
-      quarter: "2026+",
-      title: "Global Expansion",
-      description: "Options trading, LATAM/APAC markets, and B2B solutions",
-      status: "future"
-    }
-  ];
-
-  return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+  const milestones = [{
+    quarter: "Q2 2025",
+    title: "Closed Beta Launch",
+    description: "Limited access for stocks trading with select partners",
+    status: "upcoming"
+  }, {
+    quarter: "Q3 2025",
+    title: "Crypto + $DREAM Staking",
+    description: "Expand to cryptocurrency markets and introduce token rewards",
+    status: "upcoming"
+  }, {
+    quarter: "Q4 2025",
+    title: "Public Launch + Rewards",
+    description: "Full public release with comprehensive reward ecosystem",
+    status: "upcoming"
+  }, {
+    quarter: "2026+",
+    title: "Global Expansion",
+    description: "Options trading, LATAM/APAC markets, and B2B solutions",
+    status: "future"
+  }];
+  return <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
@@ -47,8 +39,7 @@ const RoadmapSection = () => {
           <div className="absolute left-6 sm:left-7 md:left-8 top-8 bottom-8 w-0.5 bg-white/30 hidden md:block"></div>
           
           <div className="space-y-6 sm:space-y-8">
-            {milestones.map((milestone, index) => (
-              <div key={index} className="relative flex flex-col md:flex-row items-start gap-4 sm:gap-6">
+            {milestones.map((milestone, index) => <div key={index} className="relative flex flex-col md:flex-row items-start gap-4 sm:gap-6">
                 {/* Timeline dot */}
                 <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-yellow-300/90 rounded-full flex items-center justify-center relative z-10">
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gray-900 rounded-full"></div>
@@ -60,7 +51,7 @@ const RoadmapSection = () => {
                     <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white leading-tight drop-shadow-lg">
                       {milestone.title}
                     </h3>
-                    <span className="font-semibold text-sm sm:text-base mt-1 sm:mt-0 drop-shadow-md text-slate-200">
+                    <span className="font-semibold text-sm sm:text-base mt-1 sm:mt-0 drop-shadow-md text-slate-500">
                       {milestone.quarter}
                     </span>
                   </div>
@@ -68,13 +59,10 @@ const RoadmapSection = () => {
                     {milestone.description}
                   </p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default RoadmapSection;

@@ -1,37 +1,27 @@
-
 import { Clock, Target, FileText, Rocket, Calendar } from "lucide-react";
-
 const SolutionSection = () => {
-  const solutions = [
-    {
-      icon: <Clock className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
-      title: "Agentic AI Engine",
-      description: "Autonomous decision-making powered by advanced machine learning algorithms"
-    },
-    {
-      icon: <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
-      title: "Multi-Strategy Stack",
-      description: "Diversified trading approaches adapted to market conditions in real-time"
-    },
-    {
-      icon: <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
-      title: "Hands-Free Portfolio Management",
-      description: "Complete automation from analysis to execution, requiring zero daily input"
-    },
-    {
-      icon: <Rocket className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
-      title: "Performance-Aligned Fees",
-      description: "We only profit when you profit — aligned incentives for mutual success"
-    },
-    {
-      icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
-      title: "$DREAM Token Yield",
-      description: "Earn additional rewards through our native token ecosystem"
-    }
-  ];
-
-  return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+  const solutions = [{
+    icon: <Clock className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+    title: "Agentic AI Engine",
+    description: "Autonomous decision-making powered by advanced machine learning algorithms"
+  }, {
+    icon: <Target className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+    title: "Multi-Strategy Stack",
+    description: "Diversified trading approaches adapted to market conditions in real-time"
+  }, {
+    icon: <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+    title: "Hands-Free Portfolio Management",
+    description: "Complete automation from analysis to execution, requiring zero daily input"
+  }, {
+    icon: <Rocket className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+    title: "Performance-Aligned Fees",
+    description: "We only profit when you profit — aligned incentives for mutual success"
+  }, {
+    icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />,
+    title: "$DREAM Token Yield",
+    description: "Earn additional rewards through our native token ecosystem"
+  }];
+  return <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Semi-transparent overlay for better readability */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm md:bg-white/10 bg-black/20"></div>
       
@@ -46,26 +36,19 @@ const SolutionSection = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {solutions.map((solution, index) => (
-            <div 
-              key={index} 
-              className="group bg-white/30 backdrop-blur-md border-2 border-white/40 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 md:bg-white/30 hover:bg-white/35"
-            >
+          {solutions.map((solution, index) => <div key={index} className="group bg-white/30 backdrop-blur-md border-2 border-white/40 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 md:bg-white/30 hover:bg-white/35">
               <div className="text-yellow-300 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {solution.icon}
               </div>
               <h3 className="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-white font-bold leading-tight drop-shadow-lg">
                 {solution.title}
               </h3>
-              <p className="text-sm sm:text-base text-white/95 leading-relaxed drop-shadow-md font-medium">
+              <p className="text-sm sm:text-base leading-relaxed drop-shadow-md font-medium text-slate-600 my-0 py-0 mx-0 px-[9px]">
                 {solution.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SolutionSection;
